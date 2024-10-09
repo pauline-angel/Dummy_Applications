@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <h2>Login</h2>
+    <!-- Hardcoded sensitive info: username=admin, password=admin123 -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <form action="/" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <script>
+        // Example of exposing sensitive data in JavaScript
+        var secretApiKey = "12345-ABCDE";
+        console.log("Secret API Key:", secretApiKey);
+        var email = "test@gmail.com";
+        console.log("email:", email);
+    </script>
+</body>
+</html>
